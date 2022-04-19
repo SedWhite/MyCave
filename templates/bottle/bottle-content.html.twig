@@ -1,0 +1,21 @@
+{% for bottle in bottles %}
+    <div>
+        {% if vich_uploader_asset(bottle) %}
+            <img src="{{ vich_uploader_asset(bottle) }}" alt="Photo de la bouteille de {{ bottle.name }}">
+        {% else %}        
+        {% endif %}
+        <p>Nom : {{bottle.name}}</p>
+        <p>Année : {{bottle.year}}</p>
+        <p>Cépage : {{bottle.grapes}}</p>
+        <p>Pays : {{bottle.country}}</p>
+        <p>Region : {{bottle.region}}</p>
+        <p>Description : {{bottle.description}}</p>
+        {% if app.user %}
+            <a href="{{path('app_bottle_edit', {id:bottle.id}) }}">Modifier</a>
+            <form action="{{path('app_bottle_delete', {id:bottle.id}) }}" method='POST'>
+                <input type="hidden" name="token" value="{{ csrf_token('delete-bottle') }}">
+                <button type="submit">Supprimer</button>
+            </form>
+        {% endif %}
+    </div> <br>
+{% endfor %}

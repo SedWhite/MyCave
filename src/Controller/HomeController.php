@@ -15,4 +15,10 @@ class HomeController extends AbstractController
             'controller_name' => 'HomeController',
         ]);
     }
+
+    #[Route('/qui-sommes-nous', name: 'app_home_whoarewe')]
+    public function whoAreWe(): Response
+    {
+        return $this->render('home/whoarewe.html.twig');
+    }
 }

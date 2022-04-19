@@ -1,0 +1,16 @@
+<header>
+    <div>
+        <a href="{{path('app_home')}}">Image du logo</a>
+    </div>
+    <nav>
+        <ul>
+            {% if app.user %}
+                <a href="{{path('app_bottle_add')}}">Ajouter Une bouteille</a>
+            {% endif %}
+            <li><a href="{{path('app_home_whoarewe')}}">Qui sommes-nous</a></li>
+            <li><a href="{{path('app_bottle_seeAll')}}">Tous les vins</a></li>
+            <li><a href="{{path('app_bottle_seePerCountry', {country : 'France'}) }}">Les vins Français</a></li>
+            <li><a href="">Les vins Américains</a></li>
+        </ul>
+    </nav>
+</header>

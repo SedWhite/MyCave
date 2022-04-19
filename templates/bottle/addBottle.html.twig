@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ajout de bouteille{% endblock %}
+
+{% block body %}
+{% include "_navbar.html.twig" %}
+    {{form_start(form)}}
+        <div>
+            {{form_label(form.name, 'Nom de la bouteille')}}
+            {{form_widget(form.name)}}
+        </div>
+
+        <div>
+            {{form_label(form.year, 'Année')}}
+            {{form_widget(form.year)}}
+        </div>
+
+        <div>
+            {{form_label(form.grapes, 'Cépage')}}
+            {{form_widget(form.grapes)}}
+        </div>
+
+        <div>
+            {{form_label(form.country, 'Pays')}}
+            {{form_widget(form.country)}}
+        </div>
+
+        <div>
+            {{form_label(form.region, 'Region')}}
+            {{form_widget(form.region)}}
+        </div>
+
+        <div>
+            {{form_label(form.description, 'Description')}}
+            {{form_widget(form.description)}}
+        </div>
+
+        <div>
+            {{form_label(form.pictureFile, 'Image de la bouteille')}}
+            {{form_widget(form.pictureFile)}}
+        </div>
+
+        <button type="submit">Enregistrer</button>
+    {{form_end(form)}}
+{% endblock %}

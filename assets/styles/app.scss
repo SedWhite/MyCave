@@ -1,3 +1,23 @@
-body {
+*{ 
+    list-style: none;
+    text-decoration: none;
+    padding: 0;
+    margin: 0;
+}
+
+body{
     background-color: lightgray;
+    
+    img{
+        width:150px;
+    }
+}
+
+nav{
+    padding: 1em;
+
+    ul{
+        display: flex;
+        justify-content: space-evenly;
+    }
 }

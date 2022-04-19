@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{countryName}}{% endblock %}
+
+{% block body %}
+    {% include "_navbar.html.twig" %}
+    
+    {% for error in app.session.flashbag.get('error') %}
+        <p class="error">{{ error }}</p>
+    {% endfor %}
+
+    {% for success in app.session.flashbag.get('success') %}
+        <p class="success">{{ success }}</p>
+    {% endfor %}
+
+    {% include "bottle/bottle-content.html.twig" %}
+{% endblock %}
